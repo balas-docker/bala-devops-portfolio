@@ -8,7 +8,7 @@ spec:
   project: default
 
   source:
-    repoURL: hhttps://github.com/balas-docker/bala-devops-portfolio.git 
+    repoURL: https://github.com/balas-docker/bala-devops-portfolio.git 
     targetRevision: HEAD
     path: argocd/apps
 
