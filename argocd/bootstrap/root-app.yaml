@@ -1,0 +1,4 @@
+  source: 
+    repoURL: https://github.com/balas-docker/bala-devops-portfolio.git 
+    targetRevision: HEAD 
+    path: argocd/apps
