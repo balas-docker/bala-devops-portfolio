@@ -1,4 +1,22 @@
-  source: 
-    repoURL: https://github.com/balas-docker/bala-devops-portfolio.git 
-    targetRevision: HEAD 
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: hhttps://github.com/balas-docker/bala-devops-portfolio.git 
+    targetRevision: HEAD
     path: argocd/apps
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
