@@ -14,7 +14,7 @@ spec:
 
     helm:
       valueFiles:
-        - ../../environments/stage-env-values.yaml
+        - argocd/environments/stage-env-values.yaml
 
   destination:
     server: https://kubernetes.default.svc
