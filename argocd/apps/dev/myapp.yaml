@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-dev
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/balas-docker/bala-devops-portfolio.git 
+    targetRevision: HEAD
+    path: argocd/helm/myapp
+
+    helm:
+      valueFiles:
+        - ../../environments/dev-env-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
